@@ -3,7 +3,7 @@
 		<h1 :class="['title', 'outline']">
 			{{ page.title }}
 		</h1>
-		<aside :class="['subtitle', 'intro']">
+		<div :class="['subtitle', 'intro']">
 			{{ page.subtitle }}
 
 			<figure class="media">
@@ -15,7 +15,7 @@
 					height="800"
 				/>
 			</figure>
-		</aside>
+		</div>
 		<section :class="['body']">
 			<nuxt-content :document="page" />
 		</section>

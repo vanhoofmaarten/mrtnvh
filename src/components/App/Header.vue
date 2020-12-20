@@ -1,5 +1,5 @@
 <template>
-	<nav class="header container">
+	<nav class="header container" aria-label="Main navigation">
 		<brand class="brand" />
 		<div class="subtitle">
 			<transition name="slide-up-fade">

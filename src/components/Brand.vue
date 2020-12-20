@@ -1,5 +1,10 @@
 <template>
-	<nuxt-link :class="{ desktop: $eq.desktop }" to="/" class="brand">
+	<nuxt-link
+		:class="{ desktop: $eq.desktop }"
+		to="/"
+		class="brand"
+		aria-label="Link to homepage"
+	>
 		<div class="name firstname">Maarten</div>
 		<div class="name lastname outline">Van Hoof</div>
 	</nuxt-link>

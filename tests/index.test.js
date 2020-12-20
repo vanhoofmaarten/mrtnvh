@@ -1,3 +1,4 @@
+const { AxePuppeteer } = require("@axe-core/puppeteer");
 const parser = require("fast-xml-parser");
 const fs = require("fs");
 
@@ -11,14 +12,14 @@ const pages = sitemapJson.urlset.url.map(({ loc }) => {
 });
 const customSnapshotIdentifier = (path) => `pages${path.split("/").join("-")}`;
 
-describe("Snapshots", () => {
+describe("Pages", () => {
 	beforeEach(async () => {
 		await jestPuppeteer.resetBrowser();
 	});
 
 	describe.each(pages)("%s", (path) => {
 		test(
-			"visual",
+			"Visual snapshots",
 			async () => {
 				const page = await browser.newPage();
 				await page.goto(getUrl(path));
@@ -37,5 +38,15 @@ describe("Snapshots", () => {
 			},
 			20 * 1000,
 		);
+
+		test("a11y", async () => {
+			const page = await browser.newPage();
+			await page.setBypassCSP(true);
+			await page.goto(getUrl(path));
+			await page.waitForFunction("!!window.$nuxt");
+
+			const results = await new AxePuppeteer(page).analyze();
+			expect(results).toHaveNoViolations();
+		});
 	});
 });

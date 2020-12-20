@@ -1,6 +1,7 @@
 <template>
-	<nav :class="{ social: true, 'social--offCanvas': offCanvas }">
+	<div :class="{ social: true, 'social--offCanvas': offCanvas }">
 		<button class="reset link" @click="handleMailClick">
+			<span class="sr-only">Contact Maarten via e-mail</span>
 			<email />
 		</button>
 		<a
@@ -11,10 +12,10 @@
 			target="_blank"
 			rel="noopener"
 		>
-			<!-- eslint-disable-next-line vue/require-component-is -->
+			<span class="sr-only">{{ name }}</span>
 			<component :is="icon" />
 		</a>
-	</nav>
+	</div>
 </template>
 
 <script>

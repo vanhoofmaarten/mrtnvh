@@ -1,7 +1,7 @@
 a,
 button.link {
 	--link-color: var(--text-color);
-	--link-hover-color: var(--primary);
+	--link-hover-color: var(--primary-dark);
 	--link-transition-speed: 0.15s;
 	--link-text-decoration: underline;
 	--underline-z-index: -2;
