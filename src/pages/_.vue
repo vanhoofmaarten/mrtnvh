@@ -7,12 +7,20 @@ import startCase from "lodash/startCase";
 import Seo, { titleDefault } from "~/lib/Seo";
 import About from "~/components/Page/Type/About.vue";
 import Project from "~/components/Page/Type/Project.vue";
+import Talks from "~/components/Page/Type/Talk.vue";
 import Default from "~/components/Page/Type/Default.vue";
 
 export default {
+	layout({ params }) {
+		const [dir] = params.pathMatch.split("/");
+		if (dir === "talks") return "slide";
+		return "default";
+	},
+
 	async asyncData({ $content, params, error }) {
-		const path = `/${params.pathMatch || "index"}`;
-		const [page] = await $content({ deep: true }).where({ path }).fetch();
+		const pathSplit = params.pathMatch.split("/")[1];
+		const slug = `${pathSplit || "index"}`;
+		const [page] = await $content({ deep: true }).where({ slug }).fetch();
 
 		if (!page) {
 			return error({ statusCode: 404 });
@@ -40,10 +48,10 @@ export default {
 			image: thumbnail,
 		});
 	},
-
 	computed: {
 		type() {
 			const { dir, slug } = this.page;
+			if (dir.includes("/talks/")) return Talks;
 			if (dir === "/projects") return Project;
 			if (dir === "/" && slug === "about") return About;
 			return Default;

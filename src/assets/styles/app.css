@@ -8,6 +8,8 @@
 @import "./_button.css";
 @import "./_columns.css";
 @import "./_spacing.css";
+@import "./_layout.css";
+@import "./_slide.css";
 @import "./animation/_fade.css";
 @import "./animation/_slide-up-fade.css";
 @import "./animation/_slide-right-fade.css";

@@ -26,18 +26,18 @@
 	* Fonts
 	*/
 	--font-size-root: 14px;
-	--font-size-sm: 0.8rem;
+	--font-size-sm:   calc( var(--font-size-base) * 0.8);
 	--font-size-base: 1rem;
-	--font-size-lg: 1.25rem;
-	--font-size-xl: 1.563rem;
-	--font-size-2xl: 1.953rem;
-	--font-size-3xl: 2.441rem;
-	--font-size-4xl: 3.052rem;
-	--font-size-5xl: 3.815rem;
-	--font-size-6xl: 4.768rem;
-	--font-size-7xl: 5.96rem;
-	--font-size-8xl: 7.451rem;
-	--font-size-9xl: 9.313rem;
+	--font-size-lg:  calc( var(--font-size-base) * 1.25);
+	--font-size-xl:  calc( var(--font-size-base) * 1.563);
+	--font-size-2xl: calc( var(--font-size-base) * 1.953);
+	--font-size-3xl: calc( var(--font-size-base) * 2.441);
+	--font-size-4xl: calc( var(--font-size-base) * 3.052);
+	--font-size-5xl: calc( var(--font-size-base) * 3.815);
+	--font-size-6xl: calc( var(--font-size-base) * 4.768);
+	--font-size-7xl: calc( var(--font-size-base) * 5.96);
+	--font-size-8xl: calc( var(--font-size-base) * 7.451);
+	--font-size-9xl: calc( var(--font-size-base) * 9.313);
 	--font-family: "Inter", "Helvetica Now Text", system-ui;
 	--font-weight-normal: 400;
 	--line-height-lg: 1.75;
@@ -73,7 +73,7 @@
 	/**
 	* Spacing
 	*/
-	--space: 1rem;
+	--space: var(--font-size-base);
 	--grid-gap-x: calc(var(--space));
 	--grid-gap-y: calc(var(--space) * 2);
 

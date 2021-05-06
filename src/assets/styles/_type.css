@@ -1,4 +1,4 @@
-@custom-selector :--headings h1, h2, h3, h4, h5, h6;
+@custom-selector :--headings h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6;
 @custom-selector :--flow-content ul, ol, p, address;
 
 :--flow-content,
@@ -14,23 +14,35 @@
 	line-height: var(--line-height-sm);
 }
 
-h1 {
+h1, .h1 {
 	font-size: var(--font-size-4xl);
 }
-h2 {
+h2, .h2 {
 	font-size: var(--font-size-3xl);
 }
-h3 {
+h3, .h3 {
 	font-size: var(--font-size-2xl);
 }
-h4 {
+h4, .h4 {
 	font-size: var(--font-size-xl);
 }
-h5 {
+h5, .h5 {
 	font-size: var(--font-size-lg);
 }
-h6 {
+h6, .h6 {
 	font-size: var(--font-size-base);
+}
+
+.font-size-base {
+	font-size: var(--font-size-base);
+}
+
+.font-size-huge {
+	font-size: var(--font-size-9xl);
+}
+
+.font-weight-black {
+	font-weight: var(--fat-font-weight);
 }
 
 .outline {
@@ -57,3 +69,14 @@ h6 {
 	white-space: nowrap;
 }
 
+.text-center {
+	text-align: center;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+.line-height-base {
+	line-height: 1;
+}
